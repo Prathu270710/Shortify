@@ -2,8 +2,9 @@
   <div class="min-h-screen bg-gray-950 text-white">
     <!-- Navbar -->
     <nav class="bg-gray-900 px-8 py-4 flex justify-between items-center shadow-lg">
-      <h1 class="text-xl font-bold text-indigo-400">⚡ URL Shortener</h1>
+      <h1 class="text-xl font-bold text-indigo-400">⚡ Shortify</h1>
       <div class="flex items-center gap-4">
+        <RouterLink to="/about" class="text-gray-400 hover:text-white text-sm">About</RouterLink>
         <span class="text-gray-400">👋 {{ authStore.user?.name }}</span>
         <button
           @click="handleLogout"
@@ -115,7 +116,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, RouterLink } from 'vue-router'
 import { useUrlStore } from '../stores/urlStore'
 import { useAuthStore } from '../stores/authStore'
 import type { UrlResponse } from '../stores/urlStore'
